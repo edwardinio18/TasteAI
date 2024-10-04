@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "prepare": "husky"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier-plugin-tailwindcss": "^0.6.8"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix --config ./client/eslint.config.js",
+      "prettier --write --config ./client/.prettierrc"
+    ]
+  }
+}

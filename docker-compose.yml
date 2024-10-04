@@ -1,0 +1,22 @@
+services:
+  react:
+    image: taste-ai/react:1.0
+    build:
+      context: ./client
+      dockerfile: ../docker/react.Dockerfile
+    container_name: ta_react
+    working_dir: /usr/local/app
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./client:/usr/local/app
+      - node_modules_vol:/usr/local/app/node_modules
+    networks:
+      - tasteai_network
+
+volumes:
+  node_modules_vol:
+
+networks:
+  tasteai_network:
+    driver: bridge
